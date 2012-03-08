@@ -4,9 +4,11 @@
 %table#movies
   %thead
     %tr
-      %th Movie Title
+      %th
+        = link_to 'Movie Title', 'www.wp.pl'
       %th Rating
-      %th Release Date
+      %th
+        = link_to 'Release Date', 'www.wp.pl'
       %th More Info
   %tbody
     - @movies.each do |movie|
