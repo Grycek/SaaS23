@@ -5,10 +5,10 @@
   %thead
     %tr
       %th
-        = link_to 'Movie Title', 'www.wp.pl'
+        = link_to 'Movie Title', movies_path(:sort => 'title')
       %th Rating
       %th
-        = link_to 'Release Date', 'www.wp.pl'
+        = link_to 'Release Date', movies_path(:sort => 'date')
       %th More Info
   %tbody
     - @movies.each do |movie|
