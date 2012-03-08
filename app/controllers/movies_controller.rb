@@ -10,6 +10,9 @@ class MoviesController < ApplicationController
     @movies = Movie.all if params[:sort] == nil
     @movies = Movie.find(:all, :order => 'title') if params[:sort] == 'title'
     @movies = Movie.find(:all, :order => 'release_date') if params[:sort] == 'date'
+    params[:title_css] = params[:date_css] = 'None'
+    params[:title_css] = 'hilite' if params[:sort] == 'title'
+    params[:date_css]  = 'hilite' if params[:sort] == 'date'
   end
 
   def new
