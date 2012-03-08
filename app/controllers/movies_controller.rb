@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
   end
 
   def index
+    @all = movies.Movie unless params[:sort] == nil
     @movies = Movie.all
   end
 
