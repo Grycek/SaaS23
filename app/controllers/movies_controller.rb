@@ -7,8 +7,9 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @all = movies.Movie unless params[:sort] == nil
-    @movies = Movie.all
+    @movies = Movie.all if params[:sort] == nil
+    @movies = Movie.find(:all, :order => 'title') if params[:sort] == 'title'
+    @movies = Movie.find(:all, :order => 'release_date') if params[:sort] == 'date'
   end
 
   def new
