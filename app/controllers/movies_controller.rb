@@ -10,6 +10,7 @@ class MoviesController < ApplicationController
     @all_ratings = Movie.all_ratings
     r = Random.new
     redirect = r.rand(0..4) > 0
+    redirect = (params[:sort] != session[:sort] or params[:ratings] != session[:ratings] )
     
     [:checked, :ratings, :sort].each do |i|
       params[i] = session[i] if params[i] == nil
